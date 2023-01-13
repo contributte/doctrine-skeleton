@@ -1,0 +1,28 @@
+# ======================================
+# Includes ===============================
+includes:
+	- doctrine.neon
+
+# ======================================
+# Config ===============================
+php:
+	date.timezone: Europe/Prague
+	# session.save_path: %tempDir%/session
+
+# ======================================
+# Parameters ===========================
+parameters:
+	database:
+		driver: pdo_sqlite
+		host: null
+		path: %tempDir%/db.sqlite
+		dbname: null
+		port: null
+		user: null
+		password: null
+		memory: true
+
+# ======================================
+# Services =============================
+services:
+	# myservice: App\Model\MyService

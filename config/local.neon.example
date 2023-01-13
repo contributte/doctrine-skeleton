@@ -1,0 +1,9 @@
+parameters:
+	database:
+		driver: pdo_sqlite
+		host: null
+		dbname: null
+		port: null
+		user: null
+		password: null
+		memory: true
