@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         verbose="true"
+         cacheResult="true"
+         cacheResultFile="var/tmp/.phpunit.result.cache"
+         bootstrap="tests/bootstrap.php">
+    <php>
+        <ini name="memory_limit" value="2048M"/>
+    </php>
+    <testsuites>
+        <testsuite name="Contributte.E2E">
+            <directory>./tests/Cases/E2E</directory>
+        </testsuite>
+        <testsuite name="Contributte.Unit">
+            <directory>./tests/Cases/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <extensions>
+        <extension class="Tests\Toolkit\Phpunit\CleanerExtension"/>
+        <extension class="Tests\Toolkit\Phpunit\BypassFinalExtension"/>
+    </extensions>
+    <listeners>
+        <listener class="Tests\Toolkit\Phpunit\SpeedTrapListener"/>
+    </listeners>
+</phpunit>

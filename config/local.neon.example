@@ -1,0 +1,6 @@
+parameters:
+	database:
+		host: localhost
+		dbname: doctrine
+		user: doctrine
+		password: doctrine

@@ -1,0 +1,15 @@
+# ======================================
+# Includes ===============================
+includes:
+	- doctrine.neon
+
+# ======================================
+# Config ===============================
+php:
+	date.timezone: Europe/Prague
+	# session.save_path: %tempDir%/session
+
+# ======================================
+# Services =============================
+services:
+	# myservice: App\Model\MyService
