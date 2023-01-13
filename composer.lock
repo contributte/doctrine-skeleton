@@ -3358,16 +3358,16 @@
         },
         {
             "name": "nettrine/dbal",
-            "version": "v0.8.0",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-dbal.git",
-                "reference": "e092aac6561073e802cab948fb913e2043894155"
+                "reference": "cb448d2970f216153563581aa5d6ef2ab58fc668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-dbal/zipball/e092aac6561073e802cab948fb913e2043894155",
-                "reference": "e092aac6561073e802cab948fb913e2043894155",
+                "url": "https://api.github.com/repos/contributte/doctrine-dbal/zipball/cb448d2970f216153563581aa5d6ef2ab58fc668",
+                "reference": "cb448d2970f216153563581aa5d6ef2ab58fc668",
                 "shasum": ""
             },
             "require": {
@@ -3395,7 +3395,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8.x-dev"
+                    "dev-master": "0.9.x-dev"
                 }
             },
             "autoload": {
@@ -3414,7 +3414,7 @@
                 }
             ],
             "description": "Doctrine DBAL for Nette Framework",
-            "homepage": "https://github.com/nettrine/dbal",
+            "homepage": "https://github.com/contributte/doctrine-dbal",
             "keywords": [
                 "database",
                 "dbal",
@@ -3426,7 +3426,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/doctrine-dbal/issues",
-                "source": "https://github.com/contributte/doctrine-dbal/tree/v0.8.0"
+                "source": "https://github.com/contributte/doctrine-dbal/tree/v0.8.1"
             },
             "funding": [
                 {
@@ -3438,7 +3438,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-09T08:04:24+00:00"
+            "time": "2023-01-09T08:36:02+00:00"
         },
         {
             "name": "nettrine/extensions-atlantic18",
