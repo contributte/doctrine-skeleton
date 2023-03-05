@@ -25,7 +25,7 @@
     "nettrine/extensions-atlantic18": "^0.6.0"
   },
   "require-dev": {
-    "contributte/qa": "^0.2",
+    "contributte/qa": "^0.3",
     "contributte/dev": "^0.3",
     "dg/bypass-finals": "^1.4.1",
     "phpunit/phpunit": "^9.5.27",
