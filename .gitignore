@@ -2,12 +2,11 @@
 .idea
 
 # Composer
-/vendor/*
-
-# Apache
-!.htaccess
+/vendor
 
 # Nette
-/var/m
-# Nette config
+/var/
 /config/local.neon
+
+# Docker
+/.data
