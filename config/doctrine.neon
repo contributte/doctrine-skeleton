@@ -17,8 +17,6 @@ extensions:
 	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
 	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
 
-	nettrine.extensions.atlantic18: Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension
-
 nettrine.dbal:
 	connection:
 		driver: %database.driver%
@@ -27,7 +25,6 @@ nettrine.dbal:
 		dbname: %database.dbname%
 		user: %database.user%
 		password: %database.password%
-		memory: %database.memory%
 		charset:  UTF8
 	debug:
 		panel: %debugMode%
@@ -47,21 +44,3 @@ nettrine.orm:
 nettrine.orm.annotations:
 	mapping:
 		App\Domain\Database: %appDir%/Domain/Database
-
-		# doctrine extensions entities
-		#Gedmo\Loggable: %appDir%/../vendor/gedmo/doctrine-extensions/src/Loggable/Entity
-		#Gedmo\Translatable: %appDir%/../vendor/gedmo/doctrine-extensions/src/Translatable/Entity
-		#Gedmo\Tree: %appDir%/../vendor/gedmo/doctrine-extensions/src/Tree/Entity
-
-nettrine.extensions.atlantic18:
-	loggable: true
-	sluggable: true
-	softDeleteable: true
-	treeable: true
-	timestampable: true
-	translatable:
-		translatable: en_GB
-		default: en_GB
-		translationFallback: true
-		persistDefaultTranslation: true
-		skipOnLoad: false

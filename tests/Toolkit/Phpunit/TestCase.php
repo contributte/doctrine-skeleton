@@ -15,6 +15,14 @@ abstract class TestCase extends PHPUnitTestCase
 	public const CONFIG_DIR = __DIR__ . '/../../../config';
 	public const TMP_DIR = __DIR__ . '/../../../var/tmp/tests';
 
+	public static function setUpBeforeClass(): void
+	{
+		parent::setUpBeforeClass();
+
+		// Timezone
+		date_default_timezone_set('Europe/Prague');
+	}
+
 	public function setUp(): void
 	{
 		parent::setUp();
@@ -29,14 +37,6 @@ abstract class TestCase extends PHPUnitTestCase
 		// Change method to public
 
 		Notes::clear();
-	}
-
-	public static function setUpBeforeClass(): void
-	{
-		parent::setUpBeforeClass();
-
-		// Timezone
-		date_default_timezone_set('Europe/Prague');
 	}
 
 	protected function assertEqualsArrays(mixed $expected, mixed $actual, string $message = ''): void
