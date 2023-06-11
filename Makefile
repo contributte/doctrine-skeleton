@@ -42,8 +42,8 @@ phpstan:
 
 .PHONY: tests
 tests:
-	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite Contributte.Unit
-	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite Contributte.E2E
+	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite App.Unit
+	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite App.E2E
 
 .PHONY: coverage
 coverage:
