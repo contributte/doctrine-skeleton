@@ -1,5 +1,6 @@
 includes:
 	- vendor/contributte/phpstan/phpstan.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon
 
 parameters:
 	level: 9
@@ -16,5 +17,4 @@ parameters:
 		- bin
 
 	doctrine:
-		ormRepositoryClass: App\Model\Database\Repository\AbstractRepository
 		objectManagerLoader: .build/phpstan-doctrine.php

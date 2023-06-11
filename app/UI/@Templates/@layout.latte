@@ -18,8 +18,8 @@
 			</h1>
 		</div>
 
-		<div n:if="$flashes !== []" n:inner-foreach="$flashes as $flash">
-			<div class="{$flash->type}">
+		<div n:if="$flashes !== []" n:inner-foreach="$flashes as $flash" class="py-2">
+			<div n:class="$flash->type === 'success' ? 'bg-green-500', $flash->type === 'info' ? 'bg-blue-500', 'rounded-md px-4 py-2 text-white'">
 				{$flash->message}
 			</div>
 		</div>

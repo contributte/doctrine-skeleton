@@ -3,17 +3,15 @@
 namespace App\Domain\Database;
 
 use App\Model\Database\Entity\AbstractEntity;
-use App\Model\Database\Entity\TId;
-use Contributte\Utils\DateTime;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Domain\Database\UserRepository")
+ * @ORM\Table(name="`user`")
  */
 class User extends AbstractEntity
 {
-
-	use TId;
 
 	/** @ORM\Column(type="string") */
 	private string $username;
@@ -27,6 +25,7 @@ class User extends AbstractEntity
 	public function __construct(string $username)
 	{
 		$this->username = $username;
+		$this->createdAt = new DateTime();
 	}
 
 	public function getUsername(): string

@@ -1,5 +1,44 @@
 {block #content}
 
-<a n:href="error!" class="px-4 py-2 bg-red-500 text-white rounded-md font-bold">
-	Trigger error
-</a>
+<h2 class="text-2xl font-bold">Users</h2>
+
+<div class="my-4 gap-2 flex">
+	<a n:href="createUser!" class="px-4 py-2 bg-blue-500 text-white rounded-md font-bold">
+		Create random user
+	</a>
+	<a n:href="deleteUsers!" class="px-4 py-2 bg-red-500 text-white rounded-md font-bold">
+		Remove users
+	</a>
+</div>
+
+<div class="relative overflow-x-auto">
+	<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+		<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+		<tr>
+			<th scope="col" class="px-6 py-3">
+				ID
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Username
+			</th>
+			<th scope="col" class="px-6 py-3">
+				Created
+			</th>
+		</tr>
+		</thead>
+		<tbody n:inner-foreach="$users as $_user">
+		<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+			<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+				{$_user->getId()}
+			</th>
+			<td class="px-6 py-4">
+				{$_user->getUsername()}
+			</td>
+			<td class="px-6 py-4">
+				{$_user->getCreatedAt()|date('d.m.Y H:i:s')}
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+

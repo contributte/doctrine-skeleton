@@ -15,12 +15,10 @@ parameters:
 	database:
 		driver: pdo_sqlite
 		host: null
-		path: %tempDir%/db.sqlite
 		dbname: null
 		port: null
 		user: null
 		password: null
-		memory: true
 
 # ======================================
 # Services =============================
