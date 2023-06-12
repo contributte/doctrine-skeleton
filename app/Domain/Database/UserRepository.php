@@ -2,7 +2,7 @@
 
 namespace App\Domain\Database;
 
-use Nettrine\ORM\Repository\AbstractRepository;
+use Nettrine\Extra\Repository\AbstractRepository;
 
 /**
  * @extends AbstractRepository<User>
