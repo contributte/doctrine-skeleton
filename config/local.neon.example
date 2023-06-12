@@ -1,9 +1,8 @@
-parameters:
-	database:
-		driver: pdo_sqlite
-		host: null
-		dbname: null
-		port: null
-		user: null
-		password: null
-		memory: true
+#parameters:
+#	database:
+#		driver: pdo_pgsql
+#		host: 0.0.0.0
+#		dbname: contributte
+#		port: 5432
+#		user: contributte
+#		password: contributte
