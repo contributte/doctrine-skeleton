@@ -4,14 +4,14 @@ on:
   pull_request:
 
   push:
-    branches: ["*"]
+    branches: [ "*" ]
 
   schedule:
     - cron: "0 8 * * 1"
 
 jobs:
   coverage:
-    name: "Phpunit"
+    name: "Nette Tester"
     uses: contributte/.github/.github/workflows/phpunit-coverage.yml@v1
     with:
       make: "init coverage"
