@@ -18,10 +18,12 @@
 	<php>
 		<ini name="memory_limit" value="2048M"/>
 	</php>
+	<source>
+		<include>
+			<directory>app</directory>
+		</include>
+	</source>
 	<testsuites>
-		<testsuite name="App.Build">
-			<directory>./tests/Cases/Build</directory>
-		</testsuite>
 		<testsuite name="App.E2E">
 			<directory>./tests/Cases/E2E</directory>
 		</testsuite>

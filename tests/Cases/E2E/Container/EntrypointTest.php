@@ -1,13 +1,17 @@
 <?php declare(strict_types = 1);
 
-namespace Tests\Cases\E2E;
+namespace Tests\Cases\E2E\Container;
 
 use App\Bootstrap;
 use Contributte\Utils\FileSystem;
 use Nette\Application\Application as WebApplication;
 use Nette\DI\Container;
 use Symfony\Component\Console\Application as ConsoleApplication;
-use Tests\Toolkit\Phpunit\TestCase;
+use Tester\Assert;
+use Tester\TestCase;
+use Tests\Toolkit\Tests;
+
+require_once __DIR__ . '/../../../bootstrap.php';
 
 final class EntrypointTest extends TestCase
 {
@@ -16,45 +20,38 @@ final class EntrypointTest extends TestCase
 	{
 		parent::setUp();
 
-		if (!file_exists(self::CONFIG_DIR . '/local.neon')) {
+		if (!file_exists(Tests::ROOT_PATH . '/config/local.neon')) {
 			FileSystem::copy(
-				self::CONFIG_DIR . '/local.neon.example',
-				self::CONFIG_DIR . '/local.neon'
+				Tests::ROOT_PATH . '/config/local.neon.example',
+				Tests::ROOT_PATH . '/config/local.neon'
 			);
 		}
 	}
 
-	/**
-	 * @runInSeparateProcess
-	 */
 	public function testWeb(): void
 	{
 		$container = Bootstrap::boot()->createContainer();
 		$container->getByType(WebApplication::class);
 
-		$this->assertInstanceOf(Container::class, $container);
+		Assert::type(Container::class, $container);
 	}
 
-	/**
-	 * @runInSeparateProcess
-	 */
 	public function testCli(): void
 	{
 		$container = Bootstrap::boot()->createContainer();
 		$container->getByType(ConsoleApplication::class);
 
-		$this->assertInstanceOf(Container::class, $container);
+		Assert::type(Container::class, $container);
 	}
 
-	/**
-	 * @runInSeparateProcess
-	 */
 	public function testTest(): void
 	{
 		$container = Bootstrap::boot()->createContainer();
 		$container->getByType(Container::class);
 
-		$this->assertInstanceOf(Container::class, $container);
+		Assert::type(Container::class, $container);
 	}
 
 }
+
+(new EntrypointTest())->run();
