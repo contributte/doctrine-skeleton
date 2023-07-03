@@ -18,8 +18,8 @@
 
     "contributte/console": "^0.10.0",
 
-    "nettrine/dbal": "dev-next as 0.9.0",
-    "nettrine/orm": "dev-next as 0.9.0",
+    "nettrine/dbal": "^0.9.0",
+    "nettrine/orm": "^0.9.0",
     "nettrine/cache": "^0.5.0",
     "nettrine/migrations": "^0.10.0",
     "nettrine/annotations": "^0.9.0",
