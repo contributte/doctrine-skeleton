@@ -26,6 +26,7 @@ nettrine.dbal:
 		user: %database.user%
 		password: %database.password%
 		charset:  UTF8
+		serverVersion: '15.0'
 	debug:
 		panel: %debugMode%
 		sourcePaths: [%appDir%]
