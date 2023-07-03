@@ -42,13 +42,11 @@ phpstan:
 
 .PHONY: tests
 tests:
-	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite App.Unit
-	vendor/bin/phpunit -c phpunit.xml --stderr --testsuite App.E2E
+	vendor/bin/tester -s -p php --colors 1 -C tests
 
 .PHONY: coverage
 coverage:
-	vendor/bin/phpunit -c phpunit.xml --coverage-text --colors=never
-	vendor/bin/phpunit -c phpunit.xml --coverage-html var/tmp/tests/coverage --colors
+	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./app tests
 
 .PHONY: dev
 dev:
