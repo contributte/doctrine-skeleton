@@ -1,9 +1,7 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$configurator = App\Bootstrap::boot();
-
-return $configurator->createContainer()->getByType(App\Model\Database\EntityManagerDecorator::class);
+return App\Bootstrap::boot()
+	->createContainer()
+	->getByType(Doctrine\ORM\EntityManagerInterface::class);
