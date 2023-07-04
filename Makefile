@@ -15,7 +15,7 @@ install:
 .PHONY: setup
 setup:
 	mkdir -p var/tmp var/log
-	chmod +0777 var/tmp var/log
+	chmod 0777 var/tmp var/log
 
 .PHONY: clean
 clean:
