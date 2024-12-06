@@ -2,30 +2,37 @@
 
 namespace App\Domain\Database;
 
-use App\Model\Database\Entity\AbstractEntity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Domain\Database\UserRepository")
- * @ORM\Table(name="`user`")
- */
-class User extends AbstractEntity
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ORM\Table(name: '`user`')]
+class User
 {
 
-	/** @ORM\Column(type="string") */
+	#[ORM\Id]
+	#[ORM\GeneratedValue]
+	#[ORM\Column(type: 'integer')]
+	private int $id;
+
+	#[ORM\Column(type: 'string')]
 	private string $username;
 
-	/** @ORM\Column(type="datetime") */
+	#[ORM\Column(type: 'datetime')]
 	private DateTime $createdAt;
 
-	/** @ORM\Column(type="datetime", nullable=true) */
+	#[ORM\Column(type: 'datetime', nullable: true)]
 	private ?DateTime $updatedAt = null;
 
 	public function __construct(string $username)
 	{
 		$this->username = $username;
 		$this->createdAt = new DateTime();
+	}
+
+	public function getId(): int
+	{
+		return $this->id;
 	}
 
 	public function getUsername(): string
