@@ -3,45 +3,58 @@
 extensions:
 	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
 
-	nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
-	nettrine.cache: Nettrine\Cache\DI\CacheExtension
-
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
-	nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension
-
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
-	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
-	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
-	nettrine.orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
 
-	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
-	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+	#nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
+	#nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
 
 nettrine.dbal:
-	connection:
-		driver: %database.driver%
-		host: %database.host%
-		port: %database.port%
-		dbname: %database.dbname%
-		user: %database.user%
-		password: %database.password%
-		charset:  UTF8
-		serverVersion: '15.0'
 	debug:
 		panel: %debugMode%
-		sourcePaths: [%appDir%]
 
-nettrine.fixtures:
-	paths:
-		- %appDir%/../db/Fixtures
+	connections:
+		default:
+			driver: %postgres.driver%
+			host: %postgres.host%
+			port: %postgres.port%
+			dbname: %postgres.dbname%
+			user: %postgres.user%
+			password: %postgres.password%
+			charset:  UTF8
+			serverVersion: 15.0.0
 
-nettrine.migrations:
-	directory: %appDir%/../db/Migrations
-	namespace: DB\Migrations
+		second:
+			driver: %mariadb.driver%
+			host: %mariadb.host%
+			port: %mariadb.port%
+			dbname: %mariadb.dbname%
+			user: %mariadb.user%
+			password: %mariadb.password%
+			charset:  UTF8
+			serverVersion: 10.10.0
 
 nettrine.orm:
-	entityManagerDecoratorClass: App\Model\Database\EntityManagerDecorator
+	managers:
+		default:
+			connection: default
+			mapping:
+				App:
+					type: attributes
+					dirs: [%appDir%/Domain/Database]
+					namespace: App\Domain\Database
+		second:
+			connection: second
+			mapping:
+				App:
+					type: attributes
+					dirs: [%appDir%/Domain/Database]
+					namespace: App\Domain\Database
 
-nettrine.orm.annotations:
-	mapping:
-		App\Domain\Database: %appDir%/Domain/Database
+#nettrine.fixtures:
+#	paths:
+#		- %appDir%/../db/Fixtures
+#
+#nettrine.migrations:
+#	directory: %appDir%/../db/Migrations
+#	namespace: DB\Migrations

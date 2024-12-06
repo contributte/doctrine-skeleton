@@ -3,34 +3,40 @@
 namespace App\UI\Home;
 
 use App\Domain\Database\User;
-use App\Model\Database\EntityManagerDecorator;
 use App\UI\BasePresenter;
 use Nette\DI\Attributes\Inject;
 use Nette\Utils\Random;
+use Nettrine\ORM\ManagerRegistry;
 
 class HomePresenter extends BasePresenter
 {
 
 	#[Inject]
-	public EntityManagerDecorator $em;
+	public ManagerRegistry $managerRegistry;
 
 	public function actionDefault(): void
 	{
-		$this->template->users = $this->em->getRepository(User::class)->findAll();
+		// PostgreSQL
+		$users = $this->managerRegistry->getManager('default')->getRepository(User::class)->findAll();
+
+		// MariaDB
+		$users2 = $this->managerRegistry->getManager('second')->getRepository(User::class)->findAll();
+
+		$this->template->users = [...$users, ...$users2];
 	}
 
 	public function handleCreateUser(): void
 	{
 		$user = new User(Random::generate(20));
-		$this->em->persist($user);
-		$this->em->flush();
+		$this->managerRegistry->getManager('default')->persist($user);
+		$this->managerRegistry->getManager('default')->flush();
 		$this->flashMessage('Saved');
 		$this->redirect('this');
 	}
 
 	public function handleDeleteUsers(): void
 	{
-		$this->em->getRepository(User::class)
+		$this->managerRegistry->getManager('default')->getRepository(User::class)
 			->createQueryBuilder('u')
 			->delete()
 			->getQuery()

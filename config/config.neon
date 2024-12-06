@@ -12,13 +12,20 @@ php:
 # ======================================
 # Parameters ===========================
 parameters:
-	database:
-		driver: pdo_sqlite
-		host: null
-		dbname: null
-		port: null
-		user: null
-		password: null
+	postgres:
+		driver: pdo_pgsql
+		host: localhost
+		port: 5432
+		user: contributte
+		password: contributte
+		dbname: contributte
+	mariadb:
+		driver: mysqli
+		host: localhost
+		port: 3306
+		user: contributte
+		password: contributte
+		dbname: contributte
 
 # ======================================
 # Services =============================
