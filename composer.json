@@ -16,12 +16,14 @@
     "php": ">8.2",
     "contributte/nella": "^0.3.0",
 
-    "contributte/console": "dev-master",
-    "contributte/event-dispatcher": "dev-master",
+    "contributte/console": "^0.11.0",
+    "contributte/event-dispatcher": "^0.10.0",
 
     "nettrine/dbal": "^0.10.0",
     "nettrine/orm": "^0.10.0",
-    "nettrine/extra": "^0.2.0"
+    "nettrine/extra": "^0.2.0",
+    "nettrine/fixtures": "^0.8.0",
+    "nettrine/migrations": "^0.10.0"
   },
   "require-dev": {
     "contributte/qa": "^0.4",

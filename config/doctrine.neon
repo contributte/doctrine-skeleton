@@ -6,8 +6,8 @@ extensions:
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
 
-	#nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
-	#nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
+	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
 
 nettrine.dbal:
 	debug:
@@ -51,10 +51,10 @@ nettrine.orm:
 					dirs: [%appDir%/Domain/Database]
 					namespace: App\Domain\Database
 
-#nettrine.fixtures:
-#	paths:
-#		- %appDir%/../db/Fixtures
-#
-#nettrine.migrations:
-#	directory: %appDir%/../db/Migrations
-#	namespace: DB\Migrations
+nettrine.fixtures:
+	paths:
+		- %appDir%/../db/Fixtures
+
+nettrine.migrations:
+	directories:
+		DB\Migrations: %appDir%/../db/Migrations
