@@ -57,4 +57,5 @@ nettrine.fixtures:
 
 nettrine.migrations:
 	directories:
-		DB\Migrations: %appDir%/../db/Migrations
+		DB\Migrations: %appDir%/../db/%migration.db%
+	manager: %migration.manager%

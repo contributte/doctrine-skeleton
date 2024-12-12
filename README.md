@@ -19,22 +19,33 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 </p>
 
 <p align=center>
-	<img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fdoctrine-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"></img>
+	<a href="https://examples.contributte.org/doctrine-skeleton/">examples.contributte.org/doctrine-skeleton/</a>
+</p>
+
+<p align=center>
+	<img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fdoctrine-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"/>
 </p>
 
 -----
 
-## Goal
+## Introduction
 
-Main goal is to provide easy-to-use starter-kit project for Nette developers.
+This is a simple application with basic setup of [Doctrine](https://www.doctrine-project.org/) and [Nette](https://nette.org/).
 
-## Demo
+To test this application, follow these steps:
 
-https://examples.contributte.org/doctrine-skeleton/
+1. Create a new project.
+2. Install dependencies.
+3. Setup configuration.
+4. Run the application.
 
 ## Installation
 
-You will need `PHP 8.3+` and [Composer](https://getcomposer.org/).
+You will need `PHP 8.3+` and [Composer](https://getcomposer.org/) and [Git](https://git-scm.com/) installed.
+
+Install this application using **Composer** or **Git**.
+
+**Composer**
 
 Create project using composer.
 
@@ -42,9 +53,43 @@ Create project using composer.
 composer create-project -s dev contributte/doctrine-skeleton acme
 ```
 
-Now you have application installed. It's time to run it.
+**Git**
 
-## Startup
+```bash
+git clone git@github.com:contributte/doctrine-skeleton.git acme
+```
+
+Now you have application installed. It's time to install dependencies.
+
+```bash
+cd acme
+composer install
+```
+
+## Configuration
+
+This application uses 2 databases PostgreSQL and MariaDB. You have to configure them in `local.neon`.
+This is how default configuration looks like.
+
+```neon
+parameters:
+	postgres:
+		driver: pdo_pgsql
+		host: 0.0.0.0
+		port: 5432
+		user: contributte
+		password: contributte
+		dbname: demopostgres
+	mariadb:
+		driver: mysqli
+		host: 0.0.0.0
+		port: 3306
+		user: contributte
+		password: contributte
+		dbname: demomariadb
+```
+
+## Development
 
 The easiest way is to use php built-in web server.
 
@@ -55,27 +100,35 @@ php -S 0.0.0.0:8000 -t www
 
 Then visit [http://localhost:8000](http://localhost:8000) in your browser.
 
-## Backend
+## Usage
 
-It's based on [Contributte](https://contributte.org/) packages.
+To setup this application properly, you have to execute migrations.
 
-- [`contributte/application`](https://github.com/contributte/application)
-- [`contributte/bootstrap`](https://github.com/contributte/bootstrap)
-- [`contributte/di`](https://github.com/contributte/di)
-- [`contributte/forms`](https://github.com/contributte/forms)
-- [`contributte/http`](https://github.com/contributte/http)
-- [`contributte/utils`](https://github.com/contributte/utils)
-- [`contributte/latte`](https://github.com/contributte/latte)
-- [`contributte/tracy`](https://github.com/contributte/tracy)
+1. For **PostgreSQL** database.
 
-- [`contributte/doctrine-dbal`](https://github.com/contributte/doctrine-dbal)
-- [`contributte/doctrine-orm`](https://github.com/contributte/doctrine-orm)
-- [`contributte/doctrine-annotations`](https://github.com/contributte/doctrine-annotations)
-- [`contributte/doctrine-cache`](https://github.com/contributte/doctrine-cache)
-- [`contributte/doctrine-migrations`](https://github.com/contributte/doctrine-migrations)
-- [`contributte/doctrine-fixtures`](https://github.com/contributte/doctrine-fixtures)
+```bash
+# run migrations
+NETTE__MIGRATION__DB=postgres NETTE__MIGRATION__MANAGER=default bin/console migrations:migrate
 
-## Development
+# or generate new migration
+#NETTE__MIGRATION__DB=postgres NETTE__MIGRATION__MANAGER=default bin/console migrations:diff
+```
+
+2. For **MariaDB** database.
+
+```bash
+# run migrations
+NETTE__MIGRATION__DB=mariadb NETTE__MIGRATION__MANAGER=second bin/console migrations:migrate
+
+# or generate new migration
+#NETTE__MIGRATION__DB=mariadb NETTE__MIGRATION__MANAGER=second bin/console migrations:diff
+```
+
+## Screenshots
+
+![](.docs/screenshot.png)
+
+## Maintenance
 
 See [how to contribute](https://contributte.org/contributing.html) to this package.
 

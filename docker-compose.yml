@@ -3,7 +3,7 @@ services:
     image: postgres:15-alpine
     restart: always
     environment:
-      POSTGRES_DB: contributte
+      POSTGRES_DB: demopostgres
       POSTGRES_USER: contributte
       POSTGRES_PASSWORD: contributte
     ports:
@@ -15,7 +15,7 @@ services:
     image: mariadb:10.10
     restart: always
     environment:
-      MARIADB_DATABASE: contributte
+      MARIADB_DATABASE: demomariadb
       MARIADB_USER: contributte
       MARIADB_PASSWORD: contributte
       MARIADB_ROOT_PASSWORD: contributte

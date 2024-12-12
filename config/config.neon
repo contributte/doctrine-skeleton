@@ -27,6 +27,9 @@ parameters:
 		password: contributte
 		dbname: contributte
 
+	migration:
+		db: postgres
+		manager: default
 # ======================================
 # Services =============================
 services:

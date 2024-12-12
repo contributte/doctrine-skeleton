@@ -2904,12 +2904,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-migrations.git",
-                "reference": "4fccb28b5e606dc86a2d175ee93a293ee41305bb"
+                "reference": "6188e2120281dc1622de9dcc50d90926b627075c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-migrations/zipball/4fccb28b5e606dc86a2d175ee93a293ee41305bb",
-                "reference": "4fccb28b5e606dc86a2d175ee93a293ee41305bb",
+                "url": "https://api.github.com/repos/contributte/doctrine-migrations/zipball/6188e2120281dc1622de9dcc50d90926b627075c",
+                "reference": "6188e2120281dc1622de9dcc50d90926b627075c",
                 "shasum": ""
             },
             "require": {
@@ -2972,7 +2972,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-11T14:09:45+00:00"
+            "time": "2024-12-12T15:07:11+00:00"
         },
         {
             "name": "nettrine/orm",
@@ -5246,16 +5246,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.11.1",
+            "version": "3.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87"
+                "reference": "1368f4a58c3c52114b86b1abe8f4098869cb0079"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
-                "reference": "19473c30efe4f7b3cd42522d0b2e6e7f243c6f87",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/1368f4a58c3c52114b86b1abe8f4098869cb0079",
+                "reference": "1368f4a58c3c52114b86b1abe8f4098869cb0079",
                 "shasum": ""
             },
             "require": {
@@ -5322,7 +5322,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-11-16T12:02:36+00:00"
+            "time": "2024-12-11T16:04:26+00:00"
         }
     ],
     "aliases": [],
