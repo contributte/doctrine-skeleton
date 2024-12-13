@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88fef383af4e9c7a747c77390c7e17e5",
+    "content-hash": "e0ba6e942bac522958a1bd6501185736",
     "packages": [
         {
             "name": "contributte/application",
@@ -2674,12 +2674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-dbal.git",
-                "reference": "266966e456f0cd5de00490391fca88d0db5557d5"
+                "reference": "715f3580ec0502b9723c9ea7e79aba8ce9dbf645"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-dbal/zipball/266966e456f0cd5de00490391fca88d0db5557d5",
-                "reference": "266966e456f0cd5de00490391fca88d0db5557d5",
+                "url": "https://api.github.com/repos/contributte/doctrine-dbal/zipball/715f3580ec0502b9723c9ea7e79aba8ce9dbf645",
+                "reference": "715f3580ec0502b9723c9ea7e79aba8ce9dbf645",
                 "shasum": ""
             },
             "require": {
@@ -2747,7 +2747,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-06T15:48:12+00:00"
+            "time": "2024-12-13T13:11:47+00:00"
         },
         {
             "name": "nettrine/extra",
@@ -2980,12 +2980,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-orm.git",
-                "reference": "da6944edbfe7097915d41434e479e3d697241bb0"
+                "reference": "2941bcadf1f0eda1cb8b7db3f367c3911b3fb03a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-orm/zipball/da6944edbfe7097915d41434e479e3d697241bb0",
-                "reference": "da6944edbfe7097915d41434e479e3d697241bb0",
+                "url": "https://api.github.com/repos/contributte/doctrine-orm/zipball/2941bcadf1f0eda1cb8b7db3f367c3911b3fb03a",
+                "reference": "2941bcadf1f0eda1cb8b7db3f367c3911b3fb03a",
                 "shasum": ""
             },
             "require": {
@@ -2996,11 +2996,14 @@
                 "psr/cache": "^3.0.0",
                 "psr/log": "^3.0.2"
             },
+            "conflict": {
+                "doctrine/event-manager": "<2.0.0"
+            },
             "require-dev": {
                 "contributte/phpstan": "^0.2.0",
                 "contributte/qa": "^0.4",
                 "contributte/tester": "^0.3.0",
-                "mockery/mockery": "^1.3.1",
+                "mockery/mockery": "^1.6.12",
                 "monolog/monolog": "^3.8.0",
                 "symfony/cache": "^7.1.9",
                 "symfony/console": "^7.1.8 ",
@@ -3050,7 +3053,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-06T14:27:29+00:00"
+            "time": "2024-12-13T14:45:48+00:00"
         },
         {
             "name": "psr/cache",
@@ -5331,7 +5334,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">8.2"
+        "php": ">=8.2"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
