@@ -50,7 +50,7 @@ coverage:
 
 .PHONY: dev
 dev:
-	NETTE_DEBUG=1 NETTE_ENV=dev php -S 0.0.0.0:8000 -t www
+	NETTE_DEBUG=1 NETTE_ENV=dev php -S 0.0.0.0:8080 -t www
 
 .PHONY: build
 build:

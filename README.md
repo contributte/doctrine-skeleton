@@ -95,10 +95,10 @@ The easiest way is to use php built-in web server.
 
 ```bash
 # make dev
-php -S 0.0.0.0:8000 -t www
+php -S 0.0.0.0:8080 -t www
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in your browser.
+Then visit [http://localhost:8080](http://localhost:8080) in your browser.
 
 ## Usage
 
