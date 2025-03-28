@@ -12,6 +12,7 @@ extensions:
 nettrine.dbal:
 	debug:
 		panel: %debugMode%
+		sourcePaths: [%appDir%]
 
 	connections:
 		default:
@@ -41,14 +42,14 @@ nettrine.orm:
 			mapping:
 				App:
 					type: attributes
-					dirs: [%appDir%/Domain/Database]
+					directories: [%appDir%/Domain/Database]
 					namespace: App\Domain\Database
 		second:
 			connection: second
 			mapping:
 				App:
 					type: attributes
-					dirs: [%appDir%/Domain/Database]
+					directories: [%appDir%/Domain/Database]
 					namespace: App\Domain\Database
 
 nettrine.fixtures:
