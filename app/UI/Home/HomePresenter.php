@@ -11,25 +11,25 @@ use Nettrine\ORM\ManagerProvider;
 class HomePresenter extends BasePresenter
 {
 
-	private EntityManagerInterface $db1;
+	private EntityManagerInterface $em1;
 
-	private EntityManagerInterface $db2;
+	private EntityManagerInterface $em2;
 
 	public function __construct(ManagerProvider $managerProvider)
 	{
 		parent::__construct();
 
-		$this->db1 = $managerProvider->getManager('default');
-		$this->db2 = $managerProvider->getManager('second');
+		$this->em1 = $managerProvider->getManager('default');
+		$this->em2 = $managerProvider->getManager('second');
 	}
 
 	public function actionDefault(): void
 	{
 		// PostgreSQL
-		$users = $this->db1->getRepository(User::class)->findAll();
+		$users = $this->em1->getRepository(User::class)->findAll();
 
 		// MariaDB
-		$users2 = $this->db2->getRepository(User::class)->findAll();
+		$users2 = $this->em2->getRepository(User::class)->findAll();
 
 		$this->template->users = [...$users, ...$users2];
 	}
@@ -37,15 +37,15 @@ class HomePresenter extends BasePresenter
 	public function handleCreateUser(): void
 	{
 		$user = new User(Random::generate(20));
-		$this->db1->persist($user);
-		$this->db1->flush();
+		$this->em1->persist($user);
+		$this->em1->flush();
 		$this->flashMessage('Saved');
 		$this->redirect('this');
 	}
 
 	public function handleDeleteUsers(): void
 	{
-		$this->db1->getRepository(User::class)
+		$this->em1->getRepository(User::class)
 			->createQueryBuilder('u')
 			->delete()
 			->getQuery()
