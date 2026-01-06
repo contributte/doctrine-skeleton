@@ -22,7 +22,7 @@
     "nettrine/dbal": "^0.10.1",
     "nettrine/orm": "^0.10.0",
     "nettrine/extra": "^0.2.0",
-    "nettrine/fixtures": "^0.8.0",
+    "nettrine/fixtures": "^0.9.0",
     "nettrine/migrations": "^0.10.0"
   },
   "require-dev": {
