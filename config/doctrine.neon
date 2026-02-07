@@ -39,6 +39,7 @@ nettrine.orm:
 	managers:
 		default:
 			connection: default
+			lazyNativeObjects: true
 			mapping:
 				App:
 					type: attributes
@@ -46,6 +47,7 @@ nettrine.orm:
 					namespace: App\Domain\Database
 		second:
 			connection: second
+			lazyNativeObjects: true
 			mapping:
 				App:
 					type: attributes
