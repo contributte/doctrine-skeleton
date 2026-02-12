@@ -23,7 +23,7 @@ nettrine.dbal:
 			user: %postgres.user%
 			password: %postgres.password%
 			charset:  UTF8
-			serverVersion: 15.0.0
+			serverVersion: "15"
 
 		second:
 			driver: %mariadb.driver%
@@ -33,7 +33,7 @@ nettrine.dbal:
 			user: %mariadb.user%
 			password: %mariadb.password%
 			charset:  UTF8
-			serverVersion: 10.10.0
+			serverVersion: "10.10"
 
 nettrine.orm:
 	managers:
