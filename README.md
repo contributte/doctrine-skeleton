@@ -41,7 +41,7 @@ To test this application, follow these steps:
 
 ## Installation
 
-You will need `PHP 8.3+` and [Composer](https://getcomposer.org/) and [Git](https://git-scm.com/) installed.
+You will need `PHP 8.4+` and [Composer](https://getcomposer.org/) and [Git](https://git-scm.com/) installed.
 
 Install this application using **Composer** or **Git**.
 
