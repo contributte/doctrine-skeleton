@@ -2,7 +2,7 @@
 
 <p align=center>
   <a href="https://github.com/contributte/doctrine-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/doctrine-skeleton/master"></a>
-  <a href="https://coveralls.io/r/contributte/doctrine-skeleton"><img src="https://badgen.net/coveralls/c/github/contributte/doctrine-skeleton"></a>
+  <a href="https://codecov.io/gh/contributte/doctrine-skeleton"><img src="https://badgen.net/codecov/c/github/contributte/doctrine-skeleton"></a>
   <a href="https://packagist.org/packages/contributte/doctrine-skeleton"><img src="https://badgen.net/packagist/dm/contributte/doctrine-skeleton"></a>
   <a href="https://packagist.org/packages/contributte/doctrine-skeleton"><img src="https://badgen.net/packagist/v/contributte/doctrine-skeleton"></a>
 </p>
