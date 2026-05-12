@@ -5054,11 +5054,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.40",
+            "version": "2.1.54",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9b2c7aeb83a75d8680ea5e7c9b7fca88052b766b",
-                "reference": "9b2c7aeb83a75d8680ea5e7c9b7fca88052b766b",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8be50c3992107dc837b17da4d140fbbdf9a5c5bd",
+                "reference": "8be50c3992107dc837b17da4d140fbbdf9a5c5bd",
                 "shasum": ""
             },
             "require": {
@@ -5103,7 +5103,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-23T15:04:35+00:00"
+            "time": "2026-04-29T13:31:09+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -5154,16 +5154,16 @@
         },
         {
             "name": "phpstan/phpstan-doctrine",
-            "version": "2.0.20",
+            "version": "2.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-doctrine.git",
-                "reference": "72f4f7a02d6c98d9101e8616e0488bc0a785196d"
+                "reference": "e87516b034749432d51653c0147e053e476e8c53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/72f4f7a02d6c98d9101e8616e0488bc0a785196d",
-                "reference": "72f4f7a02d6c98d9101e8616e0488bc0a785196d",
+                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/e87516b034749432d51653c0147e053e476e8c53",
+                "reference": "e87516b034749432d51653c0147e053e476e8c53",
                 "shasum": ""
             },
             "require": {
@@ -5197,6 +5197,7 @@
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpunit/phpunit": "^9.6.20",
                 "ramsey/uuid": "^4.2",
+                "shipmonk/name-collision-detector": "^2.1",
                 "symfony/cache": "^5.4",
                 "symfony/uid": "^5.4 || ^6.4 || ^7.3"
             },
@@ -5224,9 +5225,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-doctrine/issues",
-                "source": "https://github.com/phpstan/phpstan-doctrine/tree/2.0.20"
+                "source": "https://github.com/phpstan/phpstan-doctrine/tree/2.0.22"
             },
-            "time": "2026-03-13T13:44:51+00:00"
+            "time": "2026-05-09T08:10:48+00:00"
         },
         {
             "name": "phpstan/phpstan-nette",
