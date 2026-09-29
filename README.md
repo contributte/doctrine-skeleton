@@ -53,69 +53,24 @@ Create a new project with [Composer](https://getcomposer.org):
 composer create-project -s dev contributte/doctrine-skeleton acme
 ```
 
-Or clone it with [Git](https://git-scm.com/) and install the dependencies:
-
-```bash
-git clone git@github.com:contributte/doctrine-skeleton.git acme
-cd acme
-composer install
-```
-
 Requires PHP 8.4 or later, Composer, and Docker for the two databases.
 
 ## Startup
 
-Create your local config, `config/local.neon`, from the example:
+Create `config/local.neon` from the example, uncomment its lines, then start PostgreSQL and MariaDB. The containers
+run in the foreground:
 
 ```bash
 make init
-```
-
-All lines in the example are commented out. Uncomment them, so the connections match the databases in
-`docker-compose.yml`:
-
-```neon
-parameters:
-	postgres:
-		driver: pdo_pgsql
-		host: 0.0.0.0
-		port: 5432
-		user: contributte
-		password: contributte
-		dbname: demopostgres
-	mariadb:
-		driver: mysqli
-		host: 0.0.0.0
-		port: 3306
-		user: contributte
-		password: contributte
-		dbname: demomariadb
-```
-
-Start PostgreSQL on port 5432 and MariaDB on port 3306. The containers run in the foreground, so keep the terminal
-open:
-
-```bash
 make docker-up
 ```
 
-In a second terminal, run the migrations for PostgreSQL, clear the container cache, then run them for MariaDB:
+In a second terminal, run the migrations for both databases and start the built-in server:
 
 ```bash
 bin/console migrations:migrate
 make clean
 NETTE__MIGRATION__DB=mariadb NETTE__MIGRATION__MANAGER=second bin/console migrations:migrate
-```
-
-> [!NOTE]
-> The `NETTE__MIGRATION__*` variables are compiled into the cached container in `var/tmp`. Run `make clean` whenever
-> you switch them.
-
-To generate a new migration, run `migrations:diff` with the same variables.
-
-Start the built-in server with Tracy enabled and open http://localhost:8080:
-
-```bash
 make dev
 ```
 
@@ -127,9 +82,20 @@ The known limits of the skeleton are listed in [TECH.md](TECH.md#known-limits), 
 
 ## Development
 
+Install the dependencies, run the checks and start the app:
+
+```bash
+make install   # install dependencies
+make qa        # check code style and run static analysis
+make tests     # run tests
+make dev       # start the built-in server
+```
+
+Run `make` to list every target.
+
 See [how to contribute](https://contributte.org/contributing.html) to this package.
 
-This package is currently maintained by these authors.
+This package is maintained by these authors.
 
 <a href="https://github.com/f3l1x">
   <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
