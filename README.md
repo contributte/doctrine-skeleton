@@ -1,7 +1,7 @@
 ![](https://heatbadger.now.sh/github/readme/contributte/doctrine-skeleton/)
 
 <p align=center>
-  <a href="https://github.com/contributte/doctrine-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/doctrine-skeleton/master"></a>
+  <a href="https://github.com/contributte/doctrine-skeleton/actions"><img src="https://badgen.net/github/checks/contributte/doctrine-skeleton/master?cache=300"></a>
   <a href="https://codecov.io/gh/contributte/doctrine-skeleton"><img src="https://badgen.net/codecov/c/github/contributte/doctrine-skeleton"></a>
   <a href="https://packagist.org/packages/contributte/doctrine-skeleton"><img src="https://badgen.net/packagist/dm/contributte/doctrine-skeleton"></a>
   <a href="https://packagist.org/packages/contributte/doctrine-skeleton"><img src="https://badgen.net/packagist/v/contributte/doctrine-skeleton"></a>
@@ -19,126 +19,89 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 </p>
 
 <p align=center>
-	<a href="https://examples.contributte.org/doctrine-skeleton/">examples.contributte.org/doctrine-skeleton/</a>
+  <img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fdoctrine-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"/>
 </p>
 
-<p align=center>
-	<img src="https://api.microlink.io?url=https%3A%2F%2Fexamples.contributte.org%2Fdoctrine-skeleton%2F&overlay.browser=light&screenshot=true&meta=false&embed=screenshot.url"/>
-</p>
+Doctrine Skeleton is a Nette Framework starter project with Doctrine ORM on two databases, PostgreSQL and MariaDB.
 
 -----
 
-## Introduction
+## Goal
 
-This is a simple application with basic setup of [Doctrine](https://www.doctrine-project.org/) and [Nette](https://nette.org/).
+Doctrine Skeleton shows how [Doctrine](https://www.doctrine-project.org/) ORM, DBAL and migrations work in a
+[Nette](https://nette.org/) application with two connections and two entity managers. One `User` entity is mapped
+in both, and the home page lists users from both databases, so you see the whole setup working before you change it.
 
-To test this application, follow these steps:
+It is built on:
 
-1. Create a new project.
-2. Install dependencies.
-3. Setup configuration.
-4. Run the application.
+- PHP 8.4 or later and `nette/*` packages, booted by `contributte/nella`
+- Doctrine ORM, DBAL and migrations via `nettrine/orm`, `nettrine/dbal`, `nettrine/migrations` and `nettrine/extra`
+- Symfony Console via `contributte/console`
+- PostgreSQL 15 and MariaDB 10.10 in Docker Compose
+- Code style via CodeSniffer and `contributte/qa`, static analysis via PHPStan and `contributte/phpstan`
+- Tests via Nette Tester and `contributte/tester`
+
+## Demo
+
+https://examples.contributte.org/doctrine-skeleton/
 
 ## Installation
 
-You will need `PHP 8.4+` and [Composer](https://getcomposer.org/) and [Git](https://git-scm.com/) installed.
-
-Install this application using **Composer** or **Git**.
-
-**Composer**
-
-Create project using composer.
+Create a new project with [Composer](https://getcomposer.org):
 
 ```bash
 composer create-project -s dev contributte/doctrine-skeleton acme
 ```
 
-**Git**
+Requires PHP 8.4 or later, Composer, and Docker for the two databases.
+
+## Startup
+
+Create `config/local.neon` from the example, uncomment its lines, then start PostgreSQL and MariaDB. The containers
+run in the foreground:
 
 ```bash
-git clone git@github.com:contributte/doctrine-skeleton.git acme
+make init
+make docker-up
 ```
 
-Now you have application installed. It's time to install dependencies.
+In a second terminal, run the migrations for both databases and start the built-in server:
 
 ```bash
-cd acme
-composer install
-```
-
-## Configuration
-
-This application uses 2 databases PostgreSQL and MariaDB. You have to configure them in `local.neon`.
-This is how default configuration looks like.
-
-```neon
-parameters:
-	postgres:
-		driver: pdo_pgsql
-		host: 0.0.0.0
-		port: 5432
-		user: contributte
-		password: contributte
-		dbname: demopostgres
-	mariadb:
-		driver: mysqli
-		host: 0.0.0.0
-		port: 3306
-		user: contributte
-		password: contributte
-		dbname: demomariadb
-```
-
-## Development
-
-The easiest way is to use php built-in web server.
-
-```bash
-# make dev
-php -S 0.0.0.0:8080 -t www
-```
-
-Then visit [http://localhost:8080](http://localhost:8080) in your browser.
-
-## Usage
-
-To setup this application properly, you have to execute migrations.
-
-1. For **PostgreSQL** database.
-
-```bash
-# run migrations
-NETTE__MIGRATION__DB=postgres NETTE__MIGRATION__MANAGER=default bin/console migrations:migrate
-
-# or generate new migration
-#NETTE__MIGRATION__DB=postgres NETTE__MIGRATION__MANAGER=default bin/console migrations:diff
-```
-
-2. For **MariaDB** database.
-
-```bash
-# run migrations
+bin/console migrations:migrate
+make clean
 NETTE__MIGRATION__DB=mariadb NETTE__MIGRATION__MANAGER=second bin/console migrations:migrate
-
-# or generate new migration
-#NETTE__MIGRATION__DB=mariadb NETTE__MIGRATION__MANAGER=second bin/console migrations:diff
+make dev
 ```
+
+The known limits of the skeleton are listed in [TECH.md](TECH.md#known-limits), the scope in [PRD.md](PRD.md).
 
 ## Screenshots
 
 ![](.docs/screenshot.png)
 
-## Maintenance
+## Development
+
+Install the dependencies, run the checks and start the app:
+
+```bash
+make install   # install dependencies
+make qa        # check code style and run static analysis
+make tests     # run tests
+make dev       # start the built-in server
+```
+
+Run `make` to list every target.
 
 See [how to contribute](https://contributte.org/contributing.html) to this package.
 
-This package is currently maintaining by these authors.
+This package is maintained by these authors.
 
 <a href="https://github.com/f3l1x">
-    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
+  <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
 </a>
 
 -----
 
-Consider to [support](https://contributte.org/partners.html) **contributte** development team.
-Also thank you for using this project.
+Consider [supporting](https://contributte.org/partners.html) the **contributte** development team.
+Thank you for using this package.
